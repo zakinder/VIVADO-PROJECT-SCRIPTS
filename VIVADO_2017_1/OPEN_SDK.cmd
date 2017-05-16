@@ -89,9 +89,9 @@ REM @set SDK_XSETTINGS=%XILDIR%\%VIVADO_VERSION%\SDK\.settings64-Software_Develo
 @echo ----
 @echo -Start VIVADO scripts ----
 @if %VIVADO_AVAILABLE%==1 (
-  call vivado -source ../scripts/script_main.tcl  -mode batch -notrace -tclargs --run_prebuild_sdk --boardpart %PARTNUMBER%
+  call vivado -source ../scripts/main.tcl  -mode batch -notrace -tclargs --run_prebuild_sdk --boardpart %PARTNUMBER%
 ) else (
-  call vivado_lab -source ../scripts/script_main.tcl  -mode batch -notrace -tclargs --run_prebuild_sdk --boardpart %PARTNUMBER% --labtools
+  call vivado_lab -source ../scripts/main.tcl  -mode batch -notrace -tclargs --run_prebuild_sdk --boardpart %PARTNUMBER% --labtools
 )
 @echo -scripts finished----
 @echo ----

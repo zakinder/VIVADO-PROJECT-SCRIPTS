@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+    [bootloader]../../../software/zed_1qf/zynq_fsbl.elf
+    ../../../hardware/zed_1qf/SOC_V1_ZYNQ.bit
+    ../../../software/zed_1qf/hello_world.elf
+}

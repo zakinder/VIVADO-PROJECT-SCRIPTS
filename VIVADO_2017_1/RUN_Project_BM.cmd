@@ -11,9 +11,9 @@ REM 2ND REPLACEMENT
 set "SECONDSEARCH=NULL_SEARCH"
 set "SET_SECOND_SEARCH=%SET_SECOND_SEARCH_VALUE%"
 REM MASTER TCL SOURCE
-set "THE_M_FILE=scripts/master_script_settings.tcl"
+set "THE_M_FILE=scripts/master_settings.tcl"
 REM PROJECT TCL SOURCE
-set "UPDATE_THE_FILE=scripts/script_settings.tcl"
+set "UPDATE_THE_FILE=scripts/settings.tcl"
 (for /f "delims=" %%i in (%THE_M_FILE%) do (
     set "line=%%i"
     setlocal enabledelayedexpansion
@@ -128,14 +128,14 @@ REM CHANGE TO LOG FOLDER ****** vlog_folder ******
 @echo %vlog_folder%
 @if not exist %vlog_folder% ( @mkdir %vlog_folder% )   
 @cd %vlog_folder%
-REM START VIVADO SCRIPTS CALL ****** SCRIPT_MAIN.TCL ******
+REM START VIVADO SCRIPTS CALL ****** main.TCL ******
 REM 	-MODE BATCH 
 REM 	-NOTRACE 
 REM 	-TCLARGS 
 REM 		--RUN 2 
 REM 		--CLEAN 2 
 REM 		--BOARDPART %PARTNUMBER%
-call vivado -source ../scripts/script_main.tcl  -mode batch -notrace -tclargs --run 2 --clean 2 --boardpart %PARTNUMBER%
+call vivado -source ../scripts/main.tcl  -mode batch -notrace -tclargs --run 2 --clean 2 --boardpart %PARTNUMBER%
 REM CHANGE TO DESIGN FOLDER
 @cd..
 REM DESIGN FINISHED

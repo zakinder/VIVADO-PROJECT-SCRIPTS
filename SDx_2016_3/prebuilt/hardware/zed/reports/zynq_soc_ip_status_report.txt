@@ -1,0 +1,57 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.3_sdx (win64) Build 1721784 Tue Nov 29 22:12:44 MST 2016
+| Date         : Tue May 09 22:33:05 2017
+| Host         : SakinderLaptop1 running 64-bit major release  (build 9200)
+| Command      : report_ip_status
+----------------------------------------------------------------------------------------
+
+IP Status Summary
+
+1. Project IP Status
+--------------------
+Your project uses 7 IP. Some of these IP may have undergone changes in this release of the software. Please review the recommended actions.
+
+More information on the Xilinx versioning policy is available at www.xilinx.com.
+
+Project IP Instances
++----------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| Instance Name                    | Status     | Recommendation      | Change    | IP Name            | IP      | New Version   | New        | Original Part        |
+|                                  |            |                     | Log       |                    | Version |               | License    |                      |
++----------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| zynq_soc_DIP_SWITCHES_8BITS_0    | Up-to-date | No changes required |  *(1)     | AXI GPIO           | 2.0     | 2.0 (Rev. 12) | Included   | xc7z020clg484-1      |
+|                                  |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                  |            |                     |           |                    | 12)     |               |            |                      |
++----------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| zynq_soc_LEDS_8BITS_0            | Up-to-date | No changes required |  *(2)     | AXI GPIO           | 2.0     | 2.0 (Rev. 12) | Included   | xc7z020clg484-1      |
+|                                  |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                  |            |                     |           |                    | 12)     |               |            |                      |
++----------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| zynq_soc_PUSH_BUTTONS_POSITION_0 | Up-to-date | No changes required |  *(3)     | AXI GPIO           | 2.0     | 2.0 (Rev. 12) | Included   | xc7z020clg484-1      |
+|                                  |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                  |            |                     |           |                    | 12)     |               |            |                      |
++----------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| zynq_soc_Sine_0                  | Up-to-date | No changes required | Change    | Sine_v2.0          | 2.0     | 2.0 (Rev. 2)  | Included   | xc7z020clg484-1      |
+|                                  |            |                     | Log not   |                    | (Rev.   |               |            |                      |
+|                                  |            |                     | available |                    | 2)      |               |            |                      |
++----------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| zynq_soc_processing_system7_0_0  | Up-to-date | No changes required |  *(4)     | ZYNQ7 Processing   | 5.5     | 5.5 (Rev. 4)  | Included   | xc7z020clg484-1      |
+|                                  |            |                     |           | System             | (Rev.   |               |            |                      |
+|                                  |            |                     |           |                    | 4)      |               |            |                      |
++----------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| zynq_soc_ps7_0_axi_periph_0      | Up-to-date | No changes required |  *(5)     | AXI Interconnect   | 2.1     | 2.1 (Rev. 11) | Included   | xc7z020clg484-1      |
+|                                  |            |                     |           |                    | (Rev.   |               |            |                      |
+|                                  |            |                     |           |                    | 11)     |               |            |                      |
++----------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+| zynq_soc_rst_ps7_0_50M_0         | Up-to-date | No changes required |  *(6)     | Processor System   | 5.0     | 5.0 (Rev. 10) | Included   | xc7z020clg484-1      |
+|                                  |            |                     |           | Reset              | (Rev.   |               |            |                      |
+|                                  |            |                     |           |                    | 10)     |               |            |                      |
++----------------------------------+------------+---------------------+-----------+--------------------+---------+---------------+------------+----------------------+
+*(1) c:/Xilinx/SDx/2016.3/Vivado/data/ip/xilinx/axi_gpio_v2_0/doc/axi_gpio_v2_0_changelog.txt
+*(2) c:/Xilinx/SDx/2016.3/Vivado/data/ip/xilinx/axi_gpio_v2_0/doc/axi_gpio_v2_0_changelog.txt
+*(3) c:/Xilinx/SDx/2016.3/Vivado/data/ip/xilinx/axi_gpio_v2_0/doc/axi_gpio_v2_0_changelog.txt
+*(4) c:/Xilinx/SDx/2016.3/Vivado/data/ip/xilinx/processing_system7_v5_5/doc/processing_system7_v5_5_changelog.txt
+*(5) c:/Xilinx/SDx/2016.3/Vivado/data/ip/xilinx/axi_interconnect_v2_1/doc/axi_interconnect_v2_1_changelog.txt
+*(6) c:/Xilinx/SDx/2016.3/Vivado/data/ip/xilinx/proc_sys_reset_v5_0/doc/proc_sys_reset_v5_0_changelog.txt
+
+

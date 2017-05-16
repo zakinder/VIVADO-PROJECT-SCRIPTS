@@ -1,0 +1,3 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_C_RGPIO_MODI_ENABLEMENT {C_CPLD_REV } {expr $C_CPLD_REV > 0}
+proc gen_USERPARAMETER_C_CLK_DIV_ENABLEMENT {C_RGPIO_MODI } {expr $C_RGPIO_MODI > 0}

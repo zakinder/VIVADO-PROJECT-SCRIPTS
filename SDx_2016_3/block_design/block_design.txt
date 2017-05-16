@@ -1,0 +1,6 @@
+Select 1. FB173 zynq_soc
+Select 2. ZED 	zynq_soc
+Select 3. PICO 	zynq_soc
+Select 4. TE720 zynq_soc
+Select 5. ZC702 zynq_soc
+Select 6. ZC706 zynq_soc

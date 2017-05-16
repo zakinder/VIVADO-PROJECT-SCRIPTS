@@ -11,9 +11,9 @@ REM 2ND REPLACEMENT
 set "SECONDSEARCH=NULL_SEARCH"
 set "SET_SECOND_SEARCH=%SET_SECOND_SEARCH_VALUE%"
 REM MASTER TCL SOURCE
-set "THE_M_FILE=scripts/master_script_settings.tcl"
+set "THE_M_FILE=scripts/master_settings.tcl"
 REM PROJECT TCL SOURCE
-set "UPDATE_THE_FILE=scripts/script_settings.tcl"
+set "UPDATE_THE_FILE=scripts/settings.tcl"
 (for /f "delims=" %%i in (%THE_M_FILE%) do (
     set "line=%%i"
     setlocal enabledelayedexpansion
@@ -123,7 +123,7 @@ REM @set SDK_XSETTINGS=%XILDIR%\%VIVADO_VERSION%\SDK\.settings64-Software_Develo
 @cd %vlog_folder%
 @echo ----
 @echo -Start VIVADO scripts ----
-call vivado -source ../scripts/script_main.tcl  -mode batch -notrace -tclargs --gui 1 
+call vivado -source ../scripts/main.tcl  -mode batch -notrace -tclargs --gui 1 
 @echo -scripts finished----
 @echo ----
 @echo ----Change to design folder----

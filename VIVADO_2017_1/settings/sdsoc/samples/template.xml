@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest:Manifest xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:manifest="http://www.xilinx.com/manifest">
+  <template name="Color Space Conversion - RGB/HSV" location="rgb2hsv" description="Sample application using arrays of structs. A pixel is implemented as a struct with 3 members: Red/Green/Blue or Hue/Saturation/Value. The function that performs the conversion from RGB to HSV is accelerated in hardware. The function that converts back from HSV to RGB is in software.">
+    <supports>
+      <and>
+        <or>
+          <os name="Linux"/>
+          <os name="Standalone"/>
+        </or>
+      </and>
+    </supports>
+    <accelerator name="RgbToHsv" location="top.cpp"/>
+  </template>
+  <template name="Matrix Multiplication" location="mmult" description="Implementation of a 32x32 matrix multiplication using 4-byte float values. First executes matrix mult in software 'mmult_golden()' function and then executes the matrix mult in hardware 'mmult_accel()'. By default the function 'mmult_accel()' is marked for hardware, and you can build the project. SDSoC pragmas are used to declare the access pattern of the input matrices to be multiplied as sequential. This results in FIFO interfaces on the accelerator core.">
+    <supports>
+      <and>
+        <or>
+          <os name="Linux"/>
+          <os name="Standalone"/>
+        </or>
+      </and>
+    </supports>
+    <accelerator name="mmult_accel" location="mmult_accel.cpp"/>
+    <linker inferredOptions="-poll-mode 1"/>
+  </template>
+  <template name="Matrix Multiplication Data Size" location="mmult_datasize" description="Implementation of a variable dimension size (square) matrix multiplication using 4-byte float values. Matrix dimension is a parameter to the function 'mmult_accel()'. By default the function 'mmult_accel()' is marked for hardware, and you can build the project. SDSoC pragmas are used to specify the amount of data that will be transferred to the accelerator.">
+    <supports>
+      <and>
+        <or>
+          <os name="Linux"/>
+          <os name="Standalone"/>
+        </or>
+      </and>
+    </supports>
+    <accelerator name="mmult_accel" location="mmult_accel.cpp"/>
+  </template>
+  <template name="Matrix Multiplication and Addition" location="mmultadd" description="Implementation of a 32x32 matrix multiplication followed by a matrix addition using 4-byte float values. Executes both matrix mult and add in software, then in hardware, and verifies the result. By default the functions 'mmult()' and 'madd()' are marked for hardware, and you can build the project. SDSoC pragmas are used to specify sequential access for 'mmult()' function resulting in FIFO interfaces. No pragmas are specified for 'madd()' function resulting in default BRAM interfaces.">
+    <supports>
+      <or>
+        <and>
+          <or>
+            <os name="Linux"/>
+            <os name="Standalone"/>
+          </or>
+        </and>
+      </or>
+    </supports>
+    <accelerator name="mmult" location="mmult.cpp"/>
+    <accelerator name="madd" location="madd.cpp"/>
+  </template>
+  <template name="File IO Video Processing" location="file_io_manr_sobel" description="Implementation of a Linux video processing application that reads input video from a file and writes out the output video to a file. Video processing includes Motion Adaptive Noise Reduction (MANR) followed by a Sobel filter for edge detection. By default the functions 'manr()' and 'sobel_filter()' are marked for hardware, and you can build the project. Once the project is built, you can run it by supplying a 1080p YUV422 file as input and limiting number of frames to a maximum of 10 frames. HLS pragmas are used to achieve FIFO interfaces on both 'manr()' and 'sobel_filter()' functions when implemented in hardware.">
+    <includepaths>
+      <path location="platform"/>
+    </includepaths>
+    <supports>
+      <and>
+        <os name="Linux"/>
+      </and>
+    </supports>
+    <system dmclkid="1"/>
+    <accelerator name="manr" location="manr.cpp" clkid="1"/>
+    <accelerator name="sobel_filter" location="sobel_filter.cpp" clkid="1"/>
+    <linker inferredOptions="-poll-mode 1"/>
+  </template>
+  <template name="Synthesizeable FIR Filter" location="hls_lib/hls_fir" description="Implementation of an HLS synthesizeable 84th order FIR filter on 4-byte integer values. The coefficients are fixed, and the data is added one element at a time for each call of the function (ie. after 84 function calls the first real data is produced). By default the function 'cpp_FIR()' is marked for hardware, and you can build the project. ">
+    <includepaths>
+      <path location="platform"/>
+    </includepaths>
+    <supports>
+      <and>
+        <or>
+          <os name="Linux"/>
+          <os name="Standalone"/>
+        </or>
+      </and>
+    </supports>
+    <accelerator name="cpp_FIR" location="cpp_FIR.cpp"/>
+  </template>
+  <template name="Matrix Multiplication Data Size (FreeRTOS)" location="mmult_datasize_freertos" description="FreeRTOS example implementation of a variable dimension size (square) matrix multiplication using 4-byte float values. Matrix dimension is a parameter to the function 'mmult_accel()'. By default the function 'mmult_accel()' is marked for hardware, and you can build the project. SDSoC pragmas are used to specify the amount of data that will be transferred to the accelerator.">
+    <supports>
+      <and>
+        <os name="FreeRTOS"/>
+      </and>
+    </supports>
+    <accelerator name="mmult_accel" location="mmult_accel.cpp"/>
+  </template>
+  <template name="Matrix Multiplication (area reduced)" location="xc7z010/mmult" description="Implementation of an area-reduced floating point matrix multiplication. In this version, the code is parallelized less which results in less resource usage (to fit on smaller devices, or allow for more functions to be accelerated).  By default the function 'mmult()' is marked for hardware, and you can build the project. SDSoC pragmas are used to specify the amount of data that will be transferred to the accelerator.">
+    <supports>
+      <and>
+        <or>
+          <os name="Linux"/>
+          <os name="Standalone"/>
+        </or>
+      </and>
+    </supports>
+    <accelerator name="mmult_accel" location="mmult.cpp"/>
+  </template>
+  <template name="Matrix Multiplication (area reduced, FreeRTOS)" location="xc7z010/mmult_freertos" description="Implementation of an area-reduced floating point matrix multiplication for FreeRTOS. In this version, the code is parallelized less which results in less resource usage (to fit on smaller devices, or allow for more functions to be accelerated).  By default the function 'mmult()' is marked for hardware, and you can build the project. SDSoC pragmas are used to specify the amount of data that will be transferred to the accelerator.">
+    <supports>
+      <and>
+        <or>
+          <os name="FreeRTOS"/>
+        </or>
+      </and>
+    </supports>
+    <accelerator name="mmult_accel" location="mmult_accel.cpp"/>
+  </template>
+  <template name="Matrix Multiplication Data Size (area reduced)" location="xc7z010/mmult_datasize" description="Implementation of an area-reduced floating point variable dimension size (square) matrix multiplication. In this version, the code is parallelized less which results in less resource usage (to fit on smaller devices, or allow for more functions to be accelerated). Matrix dimension is a parameter to the function 'mmult_accel()'. By default the function 'mmult_accel()' is marked for hardware, and you can build the project. SDSoC pragmas are used to specify the amount of data that will be transferred to the accelerator.">
+    <supports>
+      <and>
+        <or>
+          <os name="Linux"/>
+          <os name="Standalone"/>
+        </or>
+      </and>
+    </supports>
+    <accelerator name="mmult_accel" location="mmult_accel.cpp"/>
+    <linker inferredOptions="-poll-mode 1"/>
+  </template>
+  <template name="Pipelined Matrix Multiplication (area reduced)" location="xc7z010/mmult_pipelined" description="Implementation of an area-reduced floating point matrix multiplication. In this version, the code is parallelized less which results in less resource usage (to fit on smaller devices, or allow for more functions to be accelerated). This version is also pipelined to enable overlapping data transfer with execution of the accelerator. By default the function 'mmult_accel()' is marked for hardware, and you can build the project. SDSoC pragmas are used to specify the amount of data that will be transferred to the accelerator.">
+    <supports>
+      <and>
+        <or>
+          <os name="Linux"/>
+	  <os name="Standalone"/>
+        </or>
+      </and>
+    </supports>
+    <accelerator name="mmult_accel" location="mmult_accel.cpp"/>
+    <linker inferredOptions="-poll-mode 1"/>
+  </template>
+  <template name="Matrix Multiplication and Addition (area reduced)" location="xc7z010/mmultadd" description="Implementation of an area-reduced 32x32 matrix multiplication followed by a matrix addition using 4-byte float values. In this version, the code is parallelized less which results in less resource usage (to fit on smaller devices, or allow for more functions to be accelerated). By default the function 'mmult()' and 'madd()' are marked for hardware, and you can build the project. SDSoC pragmas are used to specify the amount of data that will be transferred to the accelerator.">
+    <supports>
+      <and>
+        <or>
+          <os name="Linux"/>
+          <os name="Standalone"/>
+        </or>
+      </and>
+    </supports>
+    <accelerator name="mmult" location="mmult.cpp"/>
+    <accelerator name="madd" location="madd.cpp"/>
+  </template>
+  <template name="Matrix Multiplication (FreeRTOS)" location="mmult_optimized_sds_freertos" description="FreeRTOS example implementation of a 32x32 matrix multiplication using 4-byte float values. First executes matrix mult in software 'mmult_golden()' function and then executes the matrix mult in hardware 'mmult_accel()'. By default the function 'mmult_accel()' is marked for hardware, and you can build the project. SDSoC pragmas are used to declare the access pattern of the input matrices to be multiplied as sequential. This results in FIFO interfaces on the accelerator core.">
+    <supports>
+      <and>
+        <os name="FreeRTOS"/>
+      </and>
+    </supports>
+    <accelerator name="mmult_accel" location="mmult_accel.cpp"/>
+    <linker inferredOptions="-poll-mode 1"/>
+  </template>
+</manifest:Manifest>

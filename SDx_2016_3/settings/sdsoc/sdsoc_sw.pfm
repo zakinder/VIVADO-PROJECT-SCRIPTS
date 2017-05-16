@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xd:repository xd:vendor="em.avnet.com" 
+               xd:library="xd"
+               xd:name="zed" 
+               xd:version="1.3" 
+               xmlns:xd="http://www.xilinx.com/xd" >
+    <xd:description>Zynq ZedBoard.</xd:description>
+    
+    <xd:bootFiles 
+      xd:os="linux" 
+      xd:bif="boot/linux.bif" 
+      xd:readme="boot/generic.readme" 
+      xd:linuxImage="boot/image.ub" 
+    />
+    
+
+    <xd:bootFiles
+      xd:os="standalone"
+      xd:bif="boot/standalone.bif"
+      xd:readme="boot/generic.readme"
+    />
+    
+    <xd:bootFiles
+      xd:os="freertos"
+      xd:bif="boot/freertos.bif"
+      xd:readme="boot/generic.readme"
+    />
+
+    <xd:libraryFiles
+      xd:os="standalone"
+      xd:libDir="aarch32-none/lib"
+      xd:ldscript="aarch32-none/lscript.ld"
+    />
+
+    <xd:libraryFiles
+      xd:os="freertos"
+      xd:osDepend="standalone"
+      xd:includeDir="/aarch32-none/include/freertos"
+      xd:libDir="/aarch32-none/lib/freertos"
+      xd:libName="freertos"
+      xd:ldscript="freertos/lscript.ld"
+    />
+      
+    <xd:hardware
+      xd:system="prebuilt"
+      xd:bitstream="hardware/prebuilt/bitstream.bit"
+      xd:export="hardware/prebuilt/export"
+      xd:swcf="hardware/prebuilt/swcf"
+      xd:hwcf="hardware/prebuilt/hwcf"
+    />
+
+</xd:repository>
+

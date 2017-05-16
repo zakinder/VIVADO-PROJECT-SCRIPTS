@@ -1,0 +1,9 @@
+CSV_VERSION=1.2
+#Comment:-do not change matrix position or remove CSV_VERSION:
+ID  , PRODID          ,PARTNAME         ,BOARDNAME                          ,SHORTNAME    ,ZYNQFLASHTYP ,FPGAFLASHTYP
+1   , ZYNQ720-03-2if   ,xc7z020clg484-2  ,em.avnet.com:ZYNQ720_2if:part0:1.3     ,ZYNQ720_2if   ,qspi_single  ,s25fl256sxxxxxx0-spi-x1_x2_x4|SPIx4|32
+2   , ZYNQ720-03-1cr   ,xc7z020clg484-1  ,em.avnet.com:ZYNQ720_1cr:part0:1.3     ,ZYNQ720_1cr   ,qspi_single  ,s25fl256sxxxxxx0-spi-x1_x2_x4|SPIx4|32
+3   , ZYNQ720-03-1qf   ,xa7z020clg484-1q ,em.avnet.com:ZYNQ720_1qf:part0:1.3     ,ZYNQ720_1qf   ,qspi_single  ,s25fl256sxxxxxx0-spi-x1_x2_x4|SPIx4|32
+4   , ZYNQ720-03-l1if  ,xc7z020clg484-1  ,em.avnet.com:ZYNQ720_l1if:part0:1.3    ,ZYNQ720_l1if  ,qspi_single  ,s25fl256sxxxxxx0-spi-x1_x2_x4|SPIx4|32
+5   , ZYNQ720-03-1cf   ,xc7z020clg484-1  ,em.avnet.com:zed:part0:1.3     ,zed   ,qspi_single  ,s25fl256sxxxxxx0-spi-x1_x2_x4|SPIx4|32
+6   , ZYNQ720-03-2ef   ,xc7z020clg484-2  ,em.avnet.com:ZYNQ720_2ef:part0:1.3     ,ZYNQ720_2ef   ,qspi_single  ,s25fl256sxxxxxx0-spi-x1_x2_x4|SPIx4|32

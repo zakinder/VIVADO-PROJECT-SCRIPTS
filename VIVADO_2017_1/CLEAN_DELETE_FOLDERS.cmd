@@ -103,9 +103,9 @@ if "%creatProject%"=="n" (GOTO EOF)
 @cd %vlog_folderv%
 @echo -Start VIVADO scripts ----
 @if %VIVADO_AVAILABLE%==1 (
-  call vivado -source ../scripts/script_main.tcl  -mode batch -notrace -tclargs --clear_all
+  call vivado -source ../scripts/main.tcl  -mode batch -notrace -tclargs --clear_all
 ) else (
-  call vivado_lab -source ../scripts/script_main.tcl  -mode batch -notrace -tclargs --clear_all --labtools
+  call vivado_lab -source ../scripts/main.tcl  -mode batch -notrace -tclargs --clear_all --labtools
 )
 @cd..
 REM REMOVE LOG FOLDER
